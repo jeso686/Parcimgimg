@@ -1,55 +1,32 @@
-# Elegant Image Harvester
+# Elegant Human-Like Image Parser
 
-A modern desktop GUI parser that:
-- opens any user-provided URL with a browser automation layer,
-- emulates human behavior (random delays, scrolling, cursor movement),
-- discovers image candidates (`img`, CSS background URLs, `srcset`),
-- evaluates dimensions and keeps only the largest-resolution image(s),
-- can optionally upscale downloaded images,
-- displays live progress in a responsive interface.
+Modern GUI parser that:
 
-## Features
-
-- **Modern GUI** based on `CustomTkinter`.
-- **Real-time log stream** with progress updates.
-- **Settings panel**:
-  - download folder,
-  - max images,
-  - single-largest-only mode,
-  - upscale factor,
-  - browser headless/headed mode,
-  - timeout.
-- **Human-like browser simulation** using Playwright:
-  - randomized pause windows,
-  - scrolling behavior,
-  - lightweight pointer movement.
+- accepts a user-provided URL;
+- simulates human browsing behavior (scroll, pauses, mouse movement);
+- finds images across static and dynamic page content;
+- groups duplicates and keeps only the highest-resolution candidate;
+- optionally upscales smaller images;
+- shows real-time logs/progress and a visual gallery.
 
 ## Tech stack
 
 - Python 3.11+
-- Playwright
-- CustomTkinter
-- Pillow
-- aiohttp
-- BeautifulSoup4
+- Streamlit (interactive GUI)
+- Playwright (browser automation)
+- httpx + BeautifulSoup + Pillow
 
-## Installation
+## Quick start
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python -m playwright install chromium
-```
-
-## Run
-
-```bash
-python app.py
+streamlit run app.py
 ```
 
 ## Notes
 
-- Some websites block automation or require login.
-- This app is intended for legal and ethical use only.
-- Respect robots policies, copyrights, and terms of service.
+- Use only websites where you are authorized to scrape media.
+- Some websites have anti-bot protection and legal restrictions.
